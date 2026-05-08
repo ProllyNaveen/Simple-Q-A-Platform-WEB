@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 <head>
 	<title> Register an account </title>
@@ -12,15 +13,15 @@
 	</tr>
 	
 	<tr>
-	<td><h4>Join our community today<h4></td>
+	<td><h4>Join our community today</h4></td>
 	</tr>
-	
+
 	<tr>
 	<td> Firstname </td>
 	</tr>
 	
 	<tr>
-	<td > <input type="text" name="firstname" placeholder="Enter your first name"> </td>
+	<td><input type="text" name="firstname" placeholder="Enter your first name"> </td>
 	</tr>
 	
 	<tr>
@@ -28,7 +29,7 @@
 	</tr>
 	
 	<tr>
-	<td > <input type="text" name="lastname" placeholder="Enter your last name"> </td>
+	<td><input type="text" name="lastname" placeholder="Enter your last name"> </td>
 	</tr>
 	
 	<tr>
@@ -36,15 +37,15 @@
 	</tr>
 	
 	<tr>
-	<td > <input type="text" name="username" placeholder="Choose a Username"> </td>
+	<td><input type="text" name="username" placeholder="Choose a Username"> </td>
 	</tr>
 	
 	<tr>
 	<td> Email </td>
 	</tr>
 	
-	<tr >
-	<td > <input type="email" name="email" placeholder="Enter your Email"> </td>
+	<tr>
+	<td><input type="email" name="email" placeholder="Enter your Email"> </td>
 	</tr>
 	
 	<tr>
@@ -52,17 +53,30 @@
 	</tr>
 	
 	<tr>
-	<td > <input type="password" name="password" placeholder="Create a strong password"> </td>
+	<td><input type="password" name="password" placeholder="Create a strong password"> </td>
 	</tr>
+
+	<tr>
+	<td><input type="password" name="Cpassword" placeholder="Confirm password again"> </td>
+	</tr>
+
+	<?php if(isset($_GET['error'])) { ?>
+	<tr>
+	<td>
+		<?php if($_GET['error'] == 'duplicate') { ?>
+			<p class="error">Username or email already exists!</p>
+		<?php } else { ?>
+			<p class="error">Registration failed. Please try again!</p>
+		<?php } ?>
+	</td>
+	</tr>
+	<?php } ?>
 	
 	<tr>
-	<td > <input type="password" name="Cpassword" placeholder="Confirm password again"> </td>
+	<td align="center"><input style="width:100%" type="submit" name="register" value="Register now"> </td>
 	</tr>
-	
-	<tr>
-	<td align="center" > <input style="width:100%" type="submit" name="register" value="Register now"> </td>
-	</tr>
-	</table>
+
+</table>
 </form>
 </div>
 </body>
