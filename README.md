@@ -3,7 +3,7 @@
 A simple web-based Q&A forum where users can ask questions and others can provide answers.
 
 ## Built With
-- HTML, CSS
+- HTML, CSS,JS
 - PHP
 - MySQL
 - XAMPP
