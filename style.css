@@ -1,0 +1,153 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center box for login/register */
+.box {
+    width: 400px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border: 1px solid #ccc;
+}
+
+/* Navigation bar */
+.navbar {
+    background-color: #4a90e2;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Page wrapper table */
+.main-table {
+    width: 80%;
+    margin: 30px auto;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 12px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Buttons */
+input[type="submit"], .btn {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 9px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover, .btn:hover {
+    background-color: #357abd;
+}
+
+/* Thread cards in the feed */
+.thread-box {
+    border: 1px solid #ddd;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #fafafa;
+}
+
+.thread-box h4 {
+    margin: 0 0 6px 0;
+}
+
+.thread-box p {
+    margin: 0;
+    color: #555;
+    font-size: 13px;
+}
+.errortext {
+  font-size: 120px;
+  font-weight: bold;
+  color:#4a90e2;
+  
+  margin: 0;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Links */
+a {
+    color: #4a90e2;
+}
+
+/* Error message */
+.error {
+    color: red;
+    font-size: 13px;
+}
+
+/* Success message */
+.success {
+    color: green;
+    font-size: 13px;
+}
+
+/* Admin table */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th, .admin-table td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.preview-img {
+      margin-top: 20px;
+      width: 300px;
+      border-radius: 15px;
+      border: 3px solid white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+	.upload-box {
+      padding: 10px;
+      background: #222;
+      color: white;
+      border: 2px solid #555;
+      border-radius: 10px;
+      cursor: pointer;
+    }

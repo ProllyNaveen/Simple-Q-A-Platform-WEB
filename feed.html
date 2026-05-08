@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forum - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Navbar -->
+<div class="navbar">
+  <table width="100%">
+    <tr>
+      <td><b>ForumHub</b></td>
+      <td align="right">
+        Welcome, <b><?php echo $_SESSION['username']; ?></b> &nbsp;|&nbsp;
+        <a href="profile.php">Profile</a> &nbsp;|&nbsp;
+        <a href="logout.php">Logout</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<!-- Main Content -->
+<div class="main-table">
+  <table width="100%">
+    <!-- Page heading and create button -->
+    <tr>
+      <td><h2>All Threads</h2></td>
+      <td align="right">
+        <a href="create-thread.php" class="btn">+ New Thread</a>
+      </td>
+    </tr>
+    <!-- Threads list -->
+    <tr>
+      <td colspan="2">
+        <table width="100%" class="admin-table">
+          <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Posted By</th>
+            <th>Date</th>
+            <th>Replies</th>
+            <th>Action</th>
+          </tr>
+          <?php while($row = mysqli_fetch_assoc($result)) { ?>
+          <tr>
+            <td>
+              <?php if(!empty($row['image'])) { ?>
+                <img src="uploads/<?php echo $row['image']; ?>" width="60" height="50" style="object-fit:cover;">
+              <?php } else { ?>
+                <img src="uploads/no-image.png" width="60" height="50" style="object-fit:cover;">
+              <?php } ?>
+            </td>
+            <td><a href="thread-view.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></td>
+            <td><?php echo $row['username']; ?></td>
+            <td><?php echo $row['created_at']; ?></td>
+            <td><?php echo $row['reply_count']; ?></td>
+            <td><a href="thread-view.php?id=<?php echo $row['id']; ?>">View</a></td>
+          </tr>
+          <?php } ?>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
