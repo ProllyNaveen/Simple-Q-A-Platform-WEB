@@ -9,7 +9,7 @@
 <div class="navbar">
   <table width="100%">
     <tr>
-      <td><b>ForumHub</b></td>
+      <td><b>FeedHub</b></td>
       <td align="right">
         Welcome, <b><?php echo $_SESSION['username']; ?></b> &nbsp;|&nbsp;
         <a href="profile.php">Profile</a> &nbsp;|&nbsp;
