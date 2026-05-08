@@ -5,7 +5,7 @@
 </head>
 <body>
 <div class="box">
-<form method="post" action="">
+<form method="post" action="register.php">
 <table align="center">
 	<tr>
 	<td><h1>Create an Account</h1> </td>
@@ -44,7 +44,7 @@
 	</tr>
 	
 	<tr >
-	<td > <input type="text" name="email" placeholder="Enter your Email"> </td>
+	<td > <input type="email" name="email" placeholder="Enter your Email"> </td>
 	</tr>
 	
 	<tr>
@@ -60,7 +60,7 @@
 	</tr>
 	
 	<tr>
-	<td align="center" > <input style="width:100%" type="submit" name="password" value="Register now"> </td>
+	<td align="center" > <input style="width:100%" type="submit" name="register" value="Register now"> </td>
 	</tr>
 	</table>
 </form>

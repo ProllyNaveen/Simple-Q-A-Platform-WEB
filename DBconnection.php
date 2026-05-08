@@ -1,5 +1,4 @@
 <?php
-<?php
 $con = mysqli_connect("localhost","root","","qaplatformdb");
 
 if(!$con) {
