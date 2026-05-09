@@ -2,6 +2,7 @@
 <head>
 	<title>Add Admin</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="validateadminregistration.js"></script>
 </head>
 <body>
 
@@ -20,7 +21,7 @@
 </div>
 
 
-<form name="addadminForm" method="post">
+<form name="addadminForm" method="post" onsubmit="return validateForm();">
 <div class="box">
 	<table align="center">
 	<tr>
