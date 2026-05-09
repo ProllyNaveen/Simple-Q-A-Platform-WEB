@@ -24,7 +24,7 @@ if(isset($_POST['login'])) {
             $_SESSION['role'] = $user['role'];
 
             if($isAdmin) {
-                header("Location:feed.php");
+                header("Location:admindashboard.php");
             } else {
                 header("Location:feed.php");
             }
