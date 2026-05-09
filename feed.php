@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php include 'session.php'; ?>
 <html>
 <head>
   <title>Forum - Home</title>
@@ -20,6 +20,7 @@
 </div>
 <!-- Main Content -->
 <div class="main-table">
+<form method="post"></form>
   <table width="100%">
     <!-- Page heading and create button -->
     <tr>

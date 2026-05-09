@@ -151,3 +151,54 @@ a {
       border-radius: 10px;
       cursor: pointer;
     }
+	/* Small stat boxes for admin dashboard */
+.boxS {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 20px 30px;
+    text-align: center;
+    min-width: 150px;
+}
+
+/* Large boxes for admin dashboard */
+.boxL {
+    width: 80%;
+    margin: 30px auto;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+/* Admin dashboard table */
+.adminDash-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.adminDash-table th, .adminDash-table td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.adminDash-table th {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.adminDash-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Small buttons inside tables */
+.btnbtn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btnbtn:hover {
+    opacity: 0.8;
+}
