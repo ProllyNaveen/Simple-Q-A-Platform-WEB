@@ -102,6 +102,9 @@
 		<td style="font-size:18px; font-weight:bold;">User Management</td>
 	</tr>
 	<tr>
+	<tr>
+    <td align="right"><a href="add-admin.php" class="btn" style="width:auto; padding: 5px 12px;">+ Add Admin</a></td>
+</tr>
 		<td><input type="text" style="width: 270px;" name="search" placeholder="Search users by Username or Email"></td>
 	</tr>
 	<tr>
