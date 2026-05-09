@@ -3,10 +3,11 @@
 <head>
 	<title> Register an account </title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/Javascript" src="validateregistration.js"></script>
 </head>
 <body>
 <div class="box">
-<form method="post" action="register.php">
+<form name="regform" method="post" action="register.php" onsubmit="return validate()">
 <table align="center">
 	<tr>
 	<td><h1>Create an Account</h1> </td>
