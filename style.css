@@ -84,12 +84,13 @@ input[type="submit"]:hover, .btn:hover {
     color: #555;
     font-size: 13px;
 }
+
+/* Error text big */
 .errortext {
-  font-size: 120px;
-  font-weight: bold;
-  color:#4a90e2;
-  
-  margin: 0;
+    font-size: 120px;
+    font-weight: bold;
+    color: #4a90e2;
+    margin: 0;
 }
 
 /* Labels */
@@ -136,28 +137,32 @@ a {
     background-color: #f9f9f9;
 }
 
+/* Preview image */
 .preview-img {
-      margin-top: 20px;
-      width: 300px;
-      border-radius: 15px;
-      border: 3px solid white;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    }
-	.upload-box {
-      padding: 10px;
-      background: #222;
-      color: white;
-      border: 2px solid #555;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-	/* Small stat boxes for admin dashboard */
+    margin-top: 20px;
+    width: 300px;
+    border-radius: 15px;
+    border: 3px solid white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Upload box */
+.upload-box {
+    padding: 10px;
+    background: #222;
+    color: white;
+    border: 2px solid #555;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Small stat boxes for admin dashboard */
 .boxS {
     background: white;
     border: 1px solid #ccc;
-    padding: 20px 30px;
+    padding: 30px 60px;
     text-align: center;
-    min-width: 150px;
+    min-width: 250px;
 }
 
 /* Large boxes for admin dashboard */
@@ -166,7 +171,7 @@ a {
     margin: 30px auto;
     background: white;
     border: 1px solid #ccc;
-    padding: 20px;
+    padding: 25px 30px;
 }
 
 /* Admin dashboard table */
@@ -175,19 +180,22 @@ a {
     border-collapse: collapse;
 }
 
-.adminDash-table th, .adminDash-table td {
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    text-align: left;
+.adminDash-table th {
+    background-color: #f2f2f2;
+    color: #888;
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid #ddd;
 }
 
-.adminDash-table th {
-    background-color: #4a90e2;
-    color: white;
+.adminDash-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
 }
 
 .adminDash-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #fafafa;
 }
 
 /* Small buttons inside tables */
@@ -195,10 +203,24 @@ a {
     background-color: #e74c3c;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 7px 14px;
     cursor: pointer;
+    border-radius: 3px;
 }
 
 .btnbtn:hover {
+    opacity: 0.8;
+}
+
+/* Button type button fix */
+input[type="button"] {
+    color: white;
+    border: none;
+    padding: 7px 14px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+input[type="button"]:hover {
     opacity: 0.8;
 }

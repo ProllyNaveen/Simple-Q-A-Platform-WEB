@@ -79,6 +79,7 @@
 				<td><?php echo $report['username']; ?></td>
 				<td><?php echo $report['reason']; ?></td>
 				<td>
+				
 					<table>
 						<tr>
 							<td><a href="delete-thread.php?id=<?php echo $report['id']; ?>"><input class="btnbtn" type="button" value="Delete Thread"></a></td>
