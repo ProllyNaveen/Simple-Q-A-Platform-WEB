@@ -4,6 +4,7 @@
 <head>
 	<title>Add Admin</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="validateadminregistration.js"></script>
 </head>
 <body>
 <!-- navbar -->
@@ -20,7 +21,7 @@
   </table>
 </div>
 
-<form name="addadminForm" method="post" action="addadminbackend.php">
+<form name="addadminForm" method="post" action="addadminbackend.php" onsubmit="return validateForm();">
 <div class="box">
 	<table align="center">
 	<tr>
