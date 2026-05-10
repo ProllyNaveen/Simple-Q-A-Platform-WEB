@@ -53,8 +53,6 @@
             <?php if(isset($_GET['error'])) { ?>
                 <?php if($_GET['error'] == 'filetype') { ?>
                     <p class="error">Only JPG, PNG and GIF images are allowed!</p>
-                <?php } else if($_GET['error'] == 'filesize') { ?>
-                    <p class="error">File size must be less than 2MB!</p>
                 <?php } else if($_GET['error'] == 'upload') { ?>
                     <p class="error">Upload failed. Please try again!</p>
                 <?php } ?>

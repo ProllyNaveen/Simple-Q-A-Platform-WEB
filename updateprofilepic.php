@@ -24,7 +24,7 @@ if(isset($_FILES['profile_pic'])) {
     }
 
     // Create unique filename
-    $newfilename = $_SESSION['id'] . "_" . time() . "_" . $filename;
+    $newfilename = $_SESSION['username'] . $_SESSION['id'] . "_" . $filename;
 
     // Upload file to uploads folder
     if(move_uploaded_file($filetmp, "uploads/" . $newfilename)) {
