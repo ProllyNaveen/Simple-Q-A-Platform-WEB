@@ -21,7 +21,7 @@ if(isset($_POST['addadmin'])) {
         }
     } catch(mysqli_sql_exception $e) {
         if($e->getCode() == 1062) {
-            header("Location:add-admin.php?error=duplicate");
+            header("Location:addadmin.php?error=duplicate");
             die();
         } else {
             header("Location:404.php");

@@ -1,4 +1,5 @@
-<?php include 'session.php'; ?>
+<?php //include 'session.php'; ?>
+<?php include 'threadviewbackend.php'; ?>
 <html>
 <head>
   <title>Thread</title>
@@ -13,7 +14,7 @@
       <td><b>ForumHub</b></td>
       <td align="right">
         Welcome, <b><?php echo $_SESSION['username']; ?></b> &nbsp;|&nbsp;
-        <a href="index.php">Home</a> &nbsp;|&nbsp;
+        <a href="feed.php">Home</a> &nbsp;|&nbsp;
         <a href="profile.php">Profile</a> &nbsp;|&nbsp;
         <a href="logout.php">Logout</a>
       </td>
@@ -80,13 +81,13 @@
     <tr>
       <td colspan="2">
         <h3>Post a Reply</h3>
-        <form method="post" action="thread-view.php?id=<?php echo $thread['id']; ?>">
+        <form method="post" action="threadviewbackend.php?id=<?php echo $thread['id']; ?>">
           <table width="100%">
             <tr>
-              <td><textarea name="reply" rows="4" placeholder="Write your answer here..."></textarea></td>
+              <td><textarea name="replybody" rows="4" placeholder="Write your answer here..."></textarea></td>
             </tr>
             <tr>
-              <td><input type="submit" value="Post Reply"></td>
+              <td><input type="submit" name="reply"value="Post Reply"></td>
             </tr>
           </table>
         </form>

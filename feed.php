@@ -1,10 +1,11 @@
-<?php include 'session.php'; ?>
+<?php include 'feedbackend.php'; ?>
 <html>
 <head>
   <title>Forum - Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <!-- Navbar -->
 <div class="navbar">
   <table width="100%">
@@ -18,15 +19,15 @@
     </tr>
   </table>
 </div>
+
 <!-- Main Content -->
 <div class="main-table">
-<form method="post"></form>
   <table width="100%">
     <!-- Page heading and create button -->
     <tr>
       <td><h2>All Threads</h2></td>
       <td align="right">
-        <a href="create-thread.php" class="btn">+ New Thread</a>
+        <a href="createpost.php" class="btn">+ New Thread</a>
       </td>
     </tr>
     <!-- Threads list -->
@@ -41,7 +42,7 @@
             <th>Replies</th>
             <th>Action</th>
           </tr>
-          <?php while($row = mysqli_fetch_assoc($result)) { ?>
+          <?php while($row = mysqli_fetch_assoc($threads)) { ?>
           <tr>
             <td>
               <?php if(!empty($row['image'])) { ?>
@@ -50,11 +51,11 @@
                 <img src="uploads/no-image.png" width="60" height="50" style="object-fit:cover;">
               <?php } ?>
             </td>
-            <td><a href="thread-view.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></td>
+            <td><a href="threadview.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></td>
             <td><?php echo $row['username']; ?></td>
             <td><?php echo $row['created_at']; ?></td>
-            <td><?php echo $row['reply_count']; ?></td>
-            <td><a href="thread-view.php?id=<?php echo $row['id']; ?>">View</a></td>
+            <td><?php echo isset($replyCounts[$row['id']]) ? $replyCounts[$row['id']] : 0; ?></td>
+            <td><a href="threadview.php?id=<?php echo $row['id']; ?>">View</a></td>
           </tr>
           <?php } ?>
         </table>
@@ -62,5 +63,6 @@
     </tr>
   </table>
 </div>
+
 </body>
 </html>

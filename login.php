@@ -9,34 +9,60 @@ if(isset($_POST['login'])) {
 
     if($isAdmin) {
         $query = "SELECT * FROM users WHERE (username='$emailUsername' OR email='$emailUsername') AND role='admin'";
-    } else {
-        $query = "SELECT * FROM users WHERE (username='$emailUsername' OR email='$emailUsername') AND role='user' AND is_banned=0";
-    }
+        $result = mysqli_query($con, $query);
 
-    $result = mysqli_query($con, $query);
-
-    if(mysqli_num_rows($result) == 1) {
-        $user = mysqli_fetch_assoc($result);
-
-        if(password_verify($password, $user['password'])) {
-            $_SESSION['id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['role'] = $user['role'];
-
-            if($isAdmin) {
+        if(mysqli_num_rows($result) == 1) {
+            $user = mysqli_fetch_assoc($result);
+            if(password_verify($password, $user['password'])) {
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['role'] = $user['role'];
                 header("Location:admindashboard.php");
+                die();
             } else {
-                header("Location:feed.php");
+                header("Location:index.php?error=1");
+                die();
             }
-            die();
         } else {
-            header("Location:login.php?error=1");
+            header("Location:index.php?error=1");
             die();
         }
+
     } else {
-        header("Location:login.php?error=1");
-        die();
+        $query = "SELECT * FROM users WHERE (username='$emailUsername' OR email='$emailUsername')";
+        $result = mysqli_query($con, $query);
+
+        if(mysqli_num_rows($result) == 1) {
+            $user = mysqli_fetch_assoc($result);
+
+            // Check if user is actually an admin
+            if($user['role'] == 'admin') {
+                header("Location:index.php?error=isadmin");
+                die();
+            }
+
+            // Check if banned
+            if($user['is_banned'] == 1) {
+                header("Location:index.php?error=banned");
+                die();
+            }
+
+            if(password_verify($password, $user['password'])) {
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['role'] = $user['role'];
+                header("Location:feed.php");
+                die();
+            } else {
+                header("Location:index.php?error=1");
+                die();
+            }
+        } else {
+            header("Location:index.php?error=1");
+            die();
+        }
     }
 }
+
 mysqli_close($con);
 ?>

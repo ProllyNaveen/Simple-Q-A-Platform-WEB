@@ -17,11 +17,7 @@ if(isset($_FILES['profile_pic'])) {
         die();
     }
 
-    // Check file size max 2MB
-    if($filesize > 2000000) {
-        header("Location:profile.php?error=filesize");
-        die();
-    }
+   
 
     // Create unique filename
     $newfilename = $_SESSION['username'] . $_SESSION['id'] . "_" . $filename;
