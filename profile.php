@@ -4,6 +4,8 @@
 <head>
 	<title>Profile</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type ="text/Javascript" src="validationprofileupdate.js"> </script>
+	<script type ="text/Javascript" src="validationprofilechangepw.js"> </script>
 </head>
 <body>
 
@@ -81,7 +83,7 @@
 
     <tr>
         <td colspan="2">
-        <form method="post" action="updateprofile.php">
+        <form method="post" name="editprofileForm" action="updateprofile.php" onsubmit="return validateUpdateInputs();">
         <table width="100%">
             <tr>
                 <td>First Name</td>
@@ -139,7 +141,7 @@
 
     <tr>
         <td colspan="2">
-        <form method="post" action="updatepassword.php">
+        <form method="post" name="updatepasswordForm" action="updatepassword.php" onsubmit="return validateChangepwInputs();">
         <table width="100%">
             <tr>
                 <td>Current Password</td>
