@@ -6,32 +6,76 @@ function validate() {
     var password = document.forms["regform"]["password"].value;
     var cpassword = document.forms["regform"]["Cpassword"].value;
 
-    if(firstname == "") {
-        alert("Please enter your first name!");
+    // First Name check
+    if(firstname.trim() == ""){
+        alert("First Name is required");
         return false;
     }
-    if(lastname == "") {
-        alert("Please enter your last name!");
+
+    // First Name letters only
+    if(!/^[A-Za-z]+$/.test(firstname)){
+        alert("First Name should contain letters only");
         return false;
     }
-    if(username == "") {
-        alert("Please enter a username!");
+
+    // Last Name check
+    if(lastname.trim() == ""){
+        alert("Last Name is required");
         return false;
     }
-    if(email == "") {
-        alert("Please enter your email!");
+
+    // Last Name letters only
+    if(!/^[A-Za-z]+$/.test(lastname)){
+        alert("Last Name should contain letters only");
         return false;
     }
-    if(password == "") {
-        alert("Please enter a password!");
+
+    // Username check
+    if(username == ""){
+        alert("Username is required");
         return false;
     }
-    if(password.length < 6) {
-        alert("Password must be at least 6 characters!");
+    
+    // Username length
+    if(username.length < 4){
+        alert("Username must be at least 4 characters");
         return false;
     }
-    if(password != cpassword) {
-        alert("Passwords do not match!");
+
+    // Email check
+    if(email == ""){
+        alert("Email is required");
+        return false;
+    }
+    
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailPattern.test(email)){
+        alert("Please enter a valid email address");
+        return false;
+    }
+
+    // Password check
+    if(password == ""){
+        alert("Password is required");
+        return false;
+    }
+
+    // Password length
+    if(password.length < 6){
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    // Confirm Password check
+    if(cpassword == ""){
+        alert("Please confirm your password");
+        return false;
+    }
+
+    // Password match check
+    if(password != cpassword){
+        alert("Passwords do not match");
         return false;
     }
 

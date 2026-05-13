@@ -17,7 +17,17 @@
 		<tr><td><input type="submit" value="Login" name="login" style="width: 100%;"></td></tr>
 		
 		<tr><td><p>Don't have an account? <a href="regform.php">Register here</a></p></td></tr>
-		<?php if(isset($_GET['error'])) { echo '<p class="error">Invalid username or password!</p>'; } ?>
+		<?php if(isset($_GET['error'])) { ?>
+    <tr><td>
+        <?php if($_GET['error'] == 'banned') { ?>
+            <p class="error">Your account has been banned. Please contact admin!</p>
+        <?php } else if($_GET['error'] == 'isadmin') { ?>
+            <p class="error">You are an admin! Please tick the admin checkbox to login!</p>
+        <?php } else { ?>
+            <p class="error">Invalid username or password!</p>
+        <?php } ?>
+    </td></tr>
+<?php } ?>
 </table>
 </form>
 </div>

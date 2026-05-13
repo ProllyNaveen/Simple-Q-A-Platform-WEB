@@ -1,5 +1,4 @@
 <?php include 'admindashboardbackend.php'; ?>
-<?php //include 'adminsession.php'; ?>
 <html>
 <head>
 	<title>Admin Dashboard</title>
@@ -23,7 +22,7 @@
 
 <!-- Stat boxes -->
 <br>
-<table align="center">
+<table align="center" width="80%">
 	<tr>
 		<td style="width:30px"></td>
 		<td>
@@ -79,7 +78,6 @@
 				<td><?php echo $report['username']; ?></td>
 				<td><?php echo $report['reason']; ?></td>
 				<td>
-				
 					<table>
 						<tr>
 							<td><a href="delete-thread.php?id=<?php echo $report['id']; ?>"><input class="btnbtn" type="button" value="Delete Thread"></a></td>
@@ -100,10 +98,27 @@
 <table width="100%">
 	<tr>
 		<td style="font-size:18px; font-weight:bold;">User Management</td>
+		<td align="right"><a href="addadmin.php" class="btn" style="width:auto; padding:5px 12px;">+ Add Admin</a></td>
 	</tr>
 	<tr>
 		<td><input type="text" style="width: 270px;" name="search" placeholder="Search users by Username or Email"></td>
 	</tr>
+
+	<!-- Success messages -->
+	<?php if(isset($_GET['success'])) { ?>
+	<tr>
+	<td colspan="2">
+		<?php if($_GET['success'] == 'banned') { ?>
+			<p class="success">User banned successfully!</p>
+		<?php } else if($_GET['success'] == 'unbanned') { ?>
+			<p class="success">User unbanned successfully!</p>
+		<?php } else if($_GET['success'] == 'deleted') { ?>
+			<p class="success">Thread deleted successfully!</p>
+		<?php } ?>
+	</td>
+	</tr>
+	<?php } ?>
+
 	<tr>
 		<td>
 		<table class="adminDash-table">
@@ -122,9 +137,9 @@
 				</td>
 				<td>
 					<?php if($user['is_banned']) { ?>
-						<a href="unban-user.php?id=<?php echo $user['id']; ?>"><input class="btnbtn" type="button" value="Unban" style="background-color:gray"></a>
+						<a href="unbanuser.php?id=<?php echo $user['id']; ?>"><input class="btnbtn" type="button" value="Unban" style="background-color:gray"></a>
 					<?php } else { ?>
-						<a href="ban-user.php?id=<?php echo $user['id']; ?>"><input class="btnbtn" type="button" value="Ban" style="background-color:red"></a>
+						<a href="banuser.php?id=<?php echo $user['id']; ?>"><input class="btnbtn" type="button" value="Ban" style="background-color:red"></a>
 					<?php } ?>
 				</td>
 			</tr>

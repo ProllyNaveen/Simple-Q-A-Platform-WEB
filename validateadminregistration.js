@@ -1,3 +1,5 @@
+
+
 function validateForm(){
 
     var firstname = document.forms["addadminForm"]["firstname"].value;
@@ -8,20 +10,38 @@ function validateForm(){
     var cpassword = document.forms["addadminForm"]["Cpassword"].value;
 
     // First Name check
-    if(firstname == ""){
+    if(firstname.trim() == ""){
         alert("First Name is required");
         return false;
     }
 
+    // First Name letters only
+    if(!/^[A-Za-z]+$/.test(firstname)){
+        alert("First Name should contain letters only");
+        return false;
+    }
+
     // Last Name check
-    if(lastname == ""){
+    if(lastname.trim() == ""){
         alert("Last Name is required");
+        return false;
+    }
+
+    // Last Name letters only
+    if(!/^[A-Za-z]+$/.test(lastname)){
+        alert("Last Name should contain letters only");
         return false;
     }
 
     // Username check
     if(username == ""){
         alert("Username is required");
+        return false;
+    }
+    
+    // Username length
+    if(username.length < 4){
+        alert("Username must be at least 4 characters");
         return false;
     }
 
@@ -31,6 +51,13 @@ function validateForm(){
         return false;
     }
     
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailPattern.test(email)){
+        alert("Please enter a valid email address");
+        return false;
+    }
+
     // Password check
     if(password == ""){
         alert("Password is required");
