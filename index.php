@@ -2,10 +2,11 @@
 <head>
 <title>Register Here</title>
 <link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="validateindex.js"> </script>
 </head>
 <body>
 <div class="box">
-<form method="post" action="login.php">
+<form method="post" name="loginForm" action="login.php" onsubmit="return validate();">
 <table align="center" >
 		<tr><td><h1>Welcome Back</h1></td></tr>
 		<tr><td><h4>Please login to join the discussion</h4></td></tr>

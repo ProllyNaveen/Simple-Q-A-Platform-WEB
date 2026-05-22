@@ -4,6 +4,7 @@
 <head>
   <title>Thread</title>
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="validatethreadview.js"> </script>
 </head>
 <body>
 
@@ -81,13 +82,13 @@
     <tr>
       <td colspan="2">
         <h3>Post a Reply</h3>
-        <form method="post" action="threadviewbackend.php?id=<?php echo $thread['id']; ?>">
+        <form method="post" name="postReplyForm" action="threadviewbackend.php?id=<?php echo $thread['id']; ?>" onsubmit="return validate();">
           <table width="100%">
             <tr>
               <td><textarea name="replybody" rows="4" placeholder="Write your answer here..."></textarea></td>
             </tr>
             <tr>
-              <td><input type="submit" name="reply"value="Post Reply"></td>
+              <td><input type="submit" name="reply" value="Post Reply"></td>
             </tr>
           </table>
         </form>

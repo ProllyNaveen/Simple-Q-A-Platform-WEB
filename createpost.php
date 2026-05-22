@@ -4,6 +4,7 @@
 <head>
 	<title>Create a new post</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="validatecreatepost.js"> </script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
 </div>
 
 <div class="box">
-<form method="post" action="createpostbackend.php" enctype="multipart/form-data">
+<form method="post" name="createPostForm" action="createpostbackend.php" enctype="multipart/form-data" onsubmit="return validate();">
 	<table align="center">
 		<tr>
 			<td align="center" style="font-weight:bold; font-size:30px;">Create a New Thread</td>
