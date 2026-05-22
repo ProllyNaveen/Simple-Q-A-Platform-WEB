@@ -13,6 +13,7 @@
       <td style="color:white"><b>ForumHub</b></td>
       <td align="right" style="color:white">
         Welcome, <b><?php echo $_SESSION['username']; ?></b> &nbsp;|&nbsp;
+		<a href="feed.php">Home</a> &nbsp;|&nbsp;
         <a href="profile.php">Profile</a> &nbsp;|&nbsp;
         <a href="logout.php">Logout</a>
       </td>
