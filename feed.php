@@ -15,7 +15,6 @@
         Welcome, <b><?php echo $_SESSION['username']; ?></b> &nbsp;|&nbsp;
         <a href="profile.php">Profile</a> &nbsp;|&nbsp;
         <a href="logout.php">Logout</a>
-      </td>
     </tr>
   </table>
 </div>
@@ -25,7 +24,15 @@
   <table width="100%">
     <!-- Page heading and create button -->
     <tr>
-      <td><h2>All Threads</h2></td>
+      <td><h2>All Threads</h2><br>
+ <div><?php if(isset($_GET['success']) && $_GET['success'] == 'deleted') { ?>
+	<p class="success">Thread deleted successfully!
+	<?php } ?>
+	<?php if(isset($_GET['error']) && $_GET['error'] == 'unauthorized') { ?>
+    <p class="error">You are not authorized to delete this thread!</p>
+	<?php } ?>
+</div>
+	  </td>  
       <td align="right">
         <a href="createpost.php" class="btn">+ New Thread</a>
       </td>
@@ -55,7 +62,13 @@
             <td><?php echo $row['username']; ?></td>
             <td><?php echo $row['created_at']; ?></td>
             <td><?php echo isset($replyCounts[$row['id']]) ? $replyCounts[$row['id']] : 0; ?></td>
-            <td><a href="threadview.php?id=<?php echo $row['id']; ?>">View</a></td>
+			<td>
+			<a href="threadview.php?id=<?php echo $row['id']; ?>">View</a>
+			<?php if($_SESSION['id'] == $row['user_id'] || $_SESSION['role'] == 'admin') { ?>
+				&nbsp;|&nbsp;
+			<a href="deletethread.php?id=<?php echo $row['id']; ?>" style="color:red;">Delete</a>
+			<?php } ?>
+			</td>
           </tr>
           <?php } ?>
         </table>
