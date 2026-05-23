@@ -71,21 +71,14 @@
 				<th>Thread Title</th>
 				<th>Author</th>
 				<th>Report Reason</th>
-				<th>Action</th>
+				
 			</tr>
 			<?php while($report = mysqli_fetch_assoc($reportsQuery)) { ?>
 			<tr>
 				<td><?php echo $report['title']; ?></td>
 				<td><?php echo $report['username']; ?></td>
 				<td><?php echo $report['reason']; ?></td>
-				<td>
-					<table>
-						<tr>
-							<td><a href="delete-thread.php?id=<?php echo $report['id']; ?>"><input class="btnbtn" type="button" value="Delete Thread"></a></td>
-							<td><a href="ban-user.php?id=<?php echo $report['id']; ?>"><input class="btnbtn" type="button" value="Ban User" style="background-color:orange"></a></td>
-						</tr>
-					</table>
-				</td>
+				
 			</tr>
 			<?php } ?>
 		</table>

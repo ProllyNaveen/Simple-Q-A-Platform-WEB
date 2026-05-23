@@ -1,4 +1,4 @@
-<?php include 'session.php'; ?>
+
 <?php include 'threadviewbackend.php'; ?>
 <html>
 <head>
