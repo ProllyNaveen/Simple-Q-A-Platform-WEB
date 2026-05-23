@@ -5,7 +5,7 @@
 </head>
 <body>
 	<div class="box">
-	<form method="post">
+	<form method="post" action="index.php">
 	<table align="center">
 		<tr>
 			<td class="errortext" align="center">404<td>

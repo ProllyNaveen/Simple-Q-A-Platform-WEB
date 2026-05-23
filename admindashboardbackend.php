@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include 'DBconnection.php';
 
 // Get total users count

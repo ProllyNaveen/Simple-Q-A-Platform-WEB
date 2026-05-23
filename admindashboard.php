@@ -1,4 +1,5 @@
 <?php include 'admindashboardbackend.php'; ?>
+<?php include 'session.php'; ?>
 <html>
 <head>
 	<title>Admin Dashboard</title>

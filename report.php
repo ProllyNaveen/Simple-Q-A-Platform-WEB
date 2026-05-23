@@ -4,6 +4,7 @@
 <head>
     <title>Report Thread</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+	<script src="validatereport.js"></script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
 </div>
 
 <div class="box">
-<form method="post" action="reportbackend.php">
+<form method="post" name="reportForm" action="reportbackend.php" onsubmit="return validateReport();">
     <input type="hidden" name="thread_id" value="<?php echo $_GET['id']; ?>">
     <table align="center">
         <tr>
