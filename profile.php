@@ -16,6 +16,9 @@
       <td style="color:white"><b>QAVerseSL</b></td>
       <td align="right" style="color:white">
         Welcome, <b><?php echo $_SESSION['username']; ?></b> &nbsp;|&nbsp;
+		<?php if($_SESSION['role'] == 'admin') { ?>
+        <a href="admindashboard.php">Admin Dashboard</a> &nbsp;|&nbsp;
+    <?php } ?>
         <a href="feed.php">Home</a> &nbsp;|&nbsp;
         <a href="logout.php">Logout</a>
       </td>
