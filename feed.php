@@ -10,8 +10,8 @@
 <div class="navbar">
   <table width="100%">
     <tr>
-      <td><b>FeedHub</b></td>
-      <td align="right">
+      <td><b style="color:white" >QAVerseSL</b></td>
+      <td align="right" style="color:white">
         Welcome, <b><?php echo $_SESSION['username']; ?></b> &nbsp;|&nbsp;
         <a href="profile.php">Profile</a> &nbsp;|&nbsp;
         <a href="logout.php">Logout</a>
