@@ -8,7 +8,7 @@ if(isset($_POST['create'])) {
     $user_id = $_SESSION['id'];
     $image = "";
 
-    // Handle image upload
+   
     if(!empty($_FILES['image']['name'])) {
         $filename = $_FILES['image']['name'];
         $filetmp = $_FILES['image']['tmp_name'];

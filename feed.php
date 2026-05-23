@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<!-- Navbar -->
+
 <div class="navbar">
   <table width="100%">
     <tr>
@@ -23,10 +23,10 @@
 </div>
 
 
-<!-- Main Content -->
+
 <div class="main-table">
   <table width="100%">
-    <!-- Page heading and create button -->
+    
     <tr>
       <td><h2>All Threads</h2><br>
  <div><?php if(isset($_GET['success']) && $_GET['success'] == 'deleted') { ?>
@@ -47,7 +47,7 @@
         <a href="createpost.php" class="btn">+ New Thread</a>
       </td>
     </tr>
-    <!-- Threads list -->
+    
     <tr>
       <td colspan="2">
         <table width="100%" class="admin-table">

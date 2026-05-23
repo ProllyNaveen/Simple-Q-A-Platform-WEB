@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- Navbar -->
+
 <div class="navbar">
   <table width="100%">
     <tr>

@@ -9,7 +9,7 @@ if(isset($_FILES['profile_pic'])) {
     $filesize = $file['size'];
     $filetype = $file['type'];
 
-    // Check if file is an image
+    
     $allowed = array('image/jpeg', 'image/png', 'image/jpg', 'image/gif');
     
     if(!in_array($filetype, $allowed)) {
@@ -19,12 +19,12 @@ if(isset($_FILES['profile_pic'])) {
 
    
 
-    // Create unique filename
+    
     $newfilename = $_SESSION['username'] . $_SESSION['id'] . "_" . $filename;
 
-    // Upload file to uploads folder
+    
     if(move_uploaded_file($filetmp, "uploads/" . $newfilename)) {
-        // Update database
+        
         $query = "UPDATE users SET profile_pic='$newfilename' WHERE id='".$_SESSION['id']."'";
         mysqli_query($con, $query);
         header("Location:profile.php?success=1");

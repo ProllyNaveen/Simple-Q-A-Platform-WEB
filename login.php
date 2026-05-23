@@ -35,13 +35,13 @@ if(isset($_POST['login'])) {
         if(mysqli_num_rows($result) == 1) {
             $user = mysqli_fetch_assoc($result);
 
-            // Check if user is actually an admin
+           
             if($user['role'] == 'admin') {
                 header("Location:index.php?error=isadmin");
                 die();
             }
 
-            // Check if banned
+            
             if($user['is_banned'] == 1) {
                 header("Location:index.php?error=banned");
                 die();

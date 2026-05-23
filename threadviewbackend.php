@@ -2,10 +2,10 @@
 include 'session.php';
 include 'DBconnection.php';
 
-// Get thread id from URL
+
 $thread_id = $_GET['id'];
 
-// Get thread details
+
 $threadQuery = "SELECT threads.*, users.username, users.profile_pic 
                 FROM threads 
                 JOIN users ON threads.user_id = users.id 
@@ -13,7 +13,7 @@ $threadQuery = "SELECT threads.*, users.username, users.profile_pic
 $threadResult = mysqli_query($con, $threadQuery);
 $thread = mysqli_fetch_assoc($threadResult);
 
-// Get replies
+
 $repliesQuery = "SELECT replies.*, users.username, users.profile_pic 
                  FROM replies 
                  JOIN users ON replies.user_id = users.id 
@@ -21,7 +21,7 @@ $repliesQuery = "SELECT replies.*, users.username, users.profile_pic
                  ORDER BY replies.created_at ASC";
 $replies = mysqli_query($con, $repliesQuery);
 
-// Handle reply submission
+
 if(isset($_POST['reply'])) {
     $replyBody = $_POST['replybody'];
     $user_id = $_SESSION['id'];
