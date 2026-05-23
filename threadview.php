@@ -12,8 +12,8 @@
 <div class="navbar">
   <table width="100%">
     <tr>
-      <td><b>ForumHub</b></td>
-      <td align="right">
+      <td style="color:white;"><b>QAVerseSL</b></td>
+      <td align="right" style="color:white;">
         Welcome, <b><?php echo $_SESSION['username']; ?></b> &nbsp;|&nbsp;
         <a href="feed.php">Home</a> &nbsp;|&nbsp;
         <a href="profile.php">Profile</a> &nbsp;|&nbsp;

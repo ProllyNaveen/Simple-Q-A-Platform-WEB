@@ -10,7 +10,7 @@
 <div class="navbar">
   <table width="100%">
     <tr>
-      <td style="color:white"><b>ForumHub</b></td>
+      <td style="color:white"><b>QAVerseSL</b></td>
       <td align="right" style="color:white">
         Welcome, <b><?php echo $_SESSION['username']; ?></b> &nbsp;|&nbsp;
 		<a href="feed.php">Home</a> &nbsp;|&nbsp;
