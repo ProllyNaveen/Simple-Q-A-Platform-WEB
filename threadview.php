@@ -1,4 +1,4 @@
-<?php //include 'session.php'; ?>
+<?php include 'session.php'; ?>
 <?php include 'threadviewbackend.php'; ?>
 <html>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- Navbar -->
+
 <div class="navbar">
   <table width="100%">
     <tr>
@@ -23,11 +23,11 @@
   </table>
 </div>
 
-<!-- Main Content -->
+
 <div class="main-table">
   <table width="100%">
 
-    <!-- Thread title -->
+    
     <tr>
       <td><h2><?php echo $thread['title']; ?></h2></td>
       <td align="right">
@@ -35,7 +35,7 @@
       </td>
     </tr>
 
-    <!-- Thread image -->
+    
     <?php if(!empty($thread['image'])) { ?>
     <tr>
       <td colspan="2">
@@ -44,7 +44,7 @@
     </tr>
     <?php } ?>
 
-    <!-- Thread body -->
+    
     <tr>
       <td colspan="2">
         <p><?php echo $thread['body']; ?></p>
@@ -52,15 +52,15 @@
       </td>
     </tr>
 
-    <!-- Divider -->
+    
     <tr><td colspan="2"><hr></td></tr>
 
-    <!-- Replies heading -->
+    
     <tr>
       <td colspan="2"><h3>Replies</h3></td>
     </tr>
 
-    <!-- Replies list -->
+    
     <?php while($reply = mysqli_fetch_assoc($replies)) { ?>
     <tr>
       <td colspan="2">
@@ -78,7 +78,7 @@
     </tr>
     <?php } ?>
 
-    <!-- Reply form -->
+    
     <tr>
       <td colspan="2">
         <h3>Post a Reply</h3>

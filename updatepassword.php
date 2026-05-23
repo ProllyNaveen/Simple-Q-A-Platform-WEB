@@ -7,24 +7,24 @@ if(isset($_POST['changepassword'])) {
     $new_password = $_POST['new_password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Get current password from database
+   
     $query = "SELECT password FROM users WHERE id='".$_SESSION['id']."'";
     $result = mysqli_query($con, $query);
     $user = mysqli_fetch_assoc($result);
 
-    // Check if current password is correct
+    
     if(!password_verify($current_password, $user['password'])) {
         header("Location:profile.php?error=wrongpassword");
         die();
     }
 
-    // Check if new passwords match
+    
     if($new_password != $confirm_password) {
         header("Location:profile.php?error=passwordmatch");
         die();
     }
 
-    // Hash new password and update
+    
     $hashedPassword = password_hash($new_password, PASSWORD_DEFAULT);
     $updateQuery = "UPDATE users SET password='$hashedPassword' WHERE id='".$_SESSION['id']."'";
 

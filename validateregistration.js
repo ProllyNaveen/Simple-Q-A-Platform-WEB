@@ -6,25 +6,25 @@ function validate() {
     var password = document.forms["regform"]["password"].value;
     var cpassword = document.forms["regform"]["Cpassword"].value;
 
-    // First Name check
+    
     if(firstname.trim() == ""){
         alert("First Name is required");
         return false;
     }
 
-    // First Name letters only
+   
     if(!/^[A-Za-z]+$/.test(firstname)){
         alert("First Name should contain letters only");
         return false;
     }
 
-    // Last Name check
+   
     if(lastname.trim() == ""){
         alert("Last Name is required");
         return false;
     }
 
-    // Last Name letters only
+    
     if(!/^[A-Za-z]+$/.test(lastname)){
         alert("Last Name should contain letters only");
         return false;

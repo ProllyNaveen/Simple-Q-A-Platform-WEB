@@ -6,13 +6,14 @@
 </head>
 <body>
 
-<!-- navbar -->
+
 <div class="navbar">
   <table width="100%">
     <tr>
       <td style="color:white"><b>QAVerseSL</b></td>
       <td align="right" style="color:white">
         Welcome, <b><?php echo $_SESSION['username']; ?></b> &nbsp;|&nbsp;
+		<a href="feed.php">Home</a> &nbsp;|&nbsp;
         <a href="profile.php">Profile</a> &nbsp;|&nbsp;
         <a href="logout.php">Logout</a>
       </td>
@@ -20,7 +21,7 @@
   </table>
 </div>
 
-<!-- Stat boxes -->
+
 <br>
 <table align="center" width="80%">
 	<tr>
@@ -57,7 +58,7 @@
 	</tr>
 </table>
 
-<!-- Moderation Queue -->
+
 <div class="boxL">
 	<table width="100%">
 		<tr>
@@ -93,7 +94,7 @@
 	</table>
 </div>
 
-<!-- User Management -->
+
 <div class="boxL" style="margin: 30px auto;">
 <table width="100%">
 	<tr>
@@ -104,7 +105,7 @@
 		<td><input type="text" style="width: 270px;" name="search" placeholder="Search users by Username or Email"></td>
 	</tr>
 
-	<!-- Success messages -->
+	
 	<?php if(isset($_GET['success'])) { ?>
 	<tr>
 	<td colspan="2">

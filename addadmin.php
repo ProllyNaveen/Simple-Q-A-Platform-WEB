@@ -7,7 +7,7 @@
 	<script src="validateadminregistration.js"></script>
 </head>
 <body>
-<!-- navbar -->
+
 <div class="navbar">
   <table width="100%">
     <tr>

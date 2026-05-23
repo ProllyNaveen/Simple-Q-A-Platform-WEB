@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<!-- Navbar -->
+
 <div class="navbar">
   <table width="100%">
     <tr>
@@ -23,11 +23,11 @@
   </table>
 </div>
 
-<!-- Profile Content -->
+
 <div class="main-table">
 <table width="100%">
 
-    <!-- Profile Picture and Info -->
+    
     <tr>
         <td width="150" align="center" valign="top">
             <img src="uploads/<?php echo $user['profile_pic']; ?>" width="120" height="120" style="border-radius:50%; border:2px solid #ccc;">
@@ -46,7 +46,7 @@
         </td>
     </tr>
 
-    <!-- Profile pic messages -->
+    
     <tr>
         <td colspan="2">
             <?php if(isset($_GET['success']) && $_GET['success'] == '1') { ?>
@@ -64,12 +64,12 @@
 
     <tr><td colspan="2"><hr></td></tr>
 
-    <!-- Edit Profile Form -->
+    
     <tr>
         <td colspan="2"><h3>Edit Profile</h3></td>
     </tr>
 
-    <!-- Edit profile messages -->
+    
     <tr>
         <td colspan="2">
             <?php if(isset($_GET['success']) && $_GET['success'] == '2') { ?>
@@ -119,12 +119,12 @@
 
     <tr><td colspan="2"><hr></td></tr>
 
-    <!-- Change Password -->
+    
     <tr>
         <td colspan="2"><h3>Change Password</h3></td>
     </tr>
 
-    <!-- Change password messages -->
+    
     <tr>
         <td colspan="2">
             <?php if(isset($_GET['success']) && $_GET['success'] == '3') { ?>

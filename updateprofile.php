@@ -12,7 +12,7 @@ if(isset($_POST['update'])) {
 
     try {
         if(mysqli_query($con, $query)) {
-            // Update session username if changed
+           
             $_SESSION['username'] = $username;
             header("Location:profile.php?success=2");
             die();
