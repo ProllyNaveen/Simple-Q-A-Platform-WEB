@@ -18,7 +18,9 @@ if(isset($_GET['id'])) {
         
         $deleteReports = "DELETE FROM reports WHERE thread_id='$thread_id'";
         mysqli_query($con, $deleteReports);
-
+		
+		$deleteLikes = "DELETE FROM likes WHERE thread_id='$thread_id'";
+		mysqli_query($con, $deleteLikes);
        
         $deleteThread = "DELETE FROM threads WHERE id='$thread_id'";
 
