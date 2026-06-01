@@ -17,16 +17,16 @@ if(isset($_POST['create'])) {
         $allowed = array('image/jpeg', 'image/png', 'image/jpg', 'image/gif');
 
         if(!in_array($filetype, $allowed)) {
-            header("Location:createpost.php?error=filetype");
+            header("Location:404.php");
             die();
         }
 
-        $newfilename = $_SESSION['username'] . $_SESSION['id'] . "_" . $filename;
+        $newfilename = $_SESSION['username'] . "_" . $filename;
 
         if(move_uploaded_file($filetmp, "uploads/" . $newfilename)) {
             $image = $newfilename;
         } else {
-            header("Location:createpost.php?error=upload");
+            header("Location:404.php");
             die();
         }
     }

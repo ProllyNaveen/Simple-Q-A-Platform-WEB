@@ -1,5 +1,5 @@
 <?php include 'admindashboardbackend.php'; ?>
-<?php include 'session.php'; ?>
+<?php include 'adminsession.php'; ?>
 <html>
 <head>
 	<title>Admin Dashboard</title>
@@ -95,9 +95,7 @@
 		<td style="font-size:18px; font-weight:bold;">User Management</td>
 		<td align="right"><a href="addadmin.php" class="btn" style="width:auto; padding:5px 12px;">+ Add Admin</a></td>
 	</tr>
-	<tr>
-		<td><input type="text" style="width: 270px;" name="search" placeholder="Search users by Username or Email"></td>
-	</tr>
+	
 
 	
 	<?php if(isset($_GET['success'])) { ?>
